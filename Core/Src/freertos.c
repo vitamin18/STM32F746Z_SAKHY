@@ -19,9 +19,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "FreeRTOS.h"
-#include "task.h"
-#include "main.h"
 #include "cmsis_os.h"
+#include "main.h"
+#include "task.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -192,95 +192,75 @@ record_t record;
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
-  .name = "defaultTask",
-  .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+    .name = "defaultTask",
+    .stack_size = 256 * 4,
+    .priority = (osPriority_t)osPriorityNormal,
 };
 /* Definitions for W5500Task */
 osThreadId_t W5500TaskHandle;
 const osThreadAttr_t W5500Task_attributes = {
-  .name = "W5500Task",
-  .stack_size = 1024 * 4,
-  .priority = (osPriority_t) osPriorityLow,
+    .name = "W5500Task",
+    .stack_size = 1024 * 4,
+    .priority = (osPriority_t)osPriorityLow,
 };
 /* Definitions for SdCardTask */
 osThreadId_t SdCardTaskHandle;
 const osThreadAttr_t SdCardTask_attributes = {
-  .name = "SdCardTask",
-  .stack_size = 2048 * 4,
-  .priority = (osPriority_t) osPriorityLow,
+    .name = "SdCardTask",
+    .stack_size = 2048 * 4,
+    .priority = (osPriority_t)osPriorityLow,
 };
 /* Definitions for AudioMixingTask */
 osThreadId_t AudioMixingTaskHandle;
 const osThreadAttr_t AudioMixingTask_attributes = {
-  .name = "AudioMixingTask",
-  .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityLow,
+    .name = "AudioMixingTask",
+    .stack_size = 256 * 4,
+    .priority = (osPriority_t)osPriorityLow,
 };
 /* Definitions for ProcessIOTask */
 osThreadId_t ProcessIOTaskHandle;
 const osThreadAttr_t ProcessIOTask_attributes = {
-  .name = "ProcessIOTask",
-  .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityLow,
+    .name = "ProcessIOTask",
+    .stack_size = 256 * 4,
+    .priority = (osPriority_t)osPriorityLow,
 };
 /* Definitions for WatchdogTask */
 osThreadId_t WatchdogTaskHandle;
 const osThreadAttr_t WatchdogTask_attributes = {
-  .name = "WatchdogTask",
-  .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityLow,
+    .name = "WatchdogTask",
+    .stack_size = 256 * 4,
+    .priority = (osPriority_t)osPriorityLow,
 };
 /* Definitions for W5500Queue */
 osMessageQueueId_t W5500QueueHandle;
-const osMessageQueueAttr_t W5500Queue_attributes = {
-  .name = "W5500Queue"
-};
+const osMessageQueueAttr_t W5500Queue_attributes = {.name = "W5500Queue"};
 /* Definitions for RxVocoderToAudioMixQueue */
 osMessageQueueId_t RxVocoderToAudioMixQueueHandle;
-const osMessageQueueAttr_t RxVocoderToAudioMixQueue_attributes = {
-  .name = "RxVocoderToAudioMixQueue"
-};
+const osMessageQueueAttr_t RxVocoderToAudioMixQueue_attributes = {.name = "RxVocoderToAudioMixQueue"};
 /* Definitions for TxVocoderToAudioMixQueue */
 osMessageQueueId_t TxVocoderToAudioMixQueueHandle;
-const osMessageQueueAttr_t TxVocoderToAudioMixQueue_attributes = {
-  .name = "TxVocoderToAudioMixQueue"
-};
+const osMessageQueueAttr_t TxVocoderToAudioMixQueue_attributes = {.name = "TxVocoderToAudioMixQueue"};
 /* Definitions for EthToAudioMixQueue */
 osMessageQueueId_t EthToAudioMixQueueHandle;
-const osMessageQueueAttr_t EthToAudioMixQueue_attributes = {
-  .name = "EthToAudioMixQueue"
-};
+const osMessageQueueAttr_t EthToAudioMixQueue_attributes = {.name = "EthToAudioMixQueue"};
 /* Definitions for AudioVocoderToProcessAudioQueue */
 osMessageQueueId_t AudioVocoderToProcessAudioQueueHandle;
-const osMessageQueueAttr_t AudioVocoderToProcessAudioQueue_attributes = {
-  .name = "AudioVocoderToProcessAudioQueue"
-};
+const osMessageQueueAttr_t AudioVocoderToProcessAudioQueue_attributes = {.name = "AudioVocoderToProcessAudioQueue"};
 /* Definitions for AudioWriteSdQueue */
 osMessageQueueId_t AudioWriteSdQueueHandle;
-const osMessageQueueAttr_t AudioWriteSdQueue_attributes = {
-  .name = "AudioWriteSdQueue"
-};
+const osMessageQueueAttr_t AudioWriteSdQueue_attributes = {.name = "AudioWriteSdQueue"};
 /* Definitions for AudioEthToVocoderQueue */
 osMessageQueueId_t AudioEthToVocoderQueueHandle;
-const osMessageQueueAttr_t AudioEthToVocoderQueue_attributes = {
-  .name = "AudioEthToVocoderQueue"
-};
+const osMessageQueueAttr_t AudioEthToVocoderQueue_attributes = {.name = "AudioEthToVocoderQueue"};
 /* Definitions for IOQueue */
 osMessageQueueId_t IOQueueHandle;
-const osMessageQueueAttr_t IOQueue_attributes = {
-  .name = "IOQueue"
-};
+const osMessageQueueAttr_t IOQueue_attributes = {.name = "IOQueue"};
 /* Definitions for CallLedTimer */
 osTimerId_t CallLedTimerHandle;
-const osTimerAttr_t CallLedTimer_attributes = {
-  .name = "CallLedTimer"
-};
+const osTimerAttr_t CallLedTimer_attributes = {.name = "CallLedTimer"};
 /* Definitions for AudioWrSdBinarySem */
 osSemaphoreId_t AudioWrSdBinarySemHandle;
-const osSemaphoreAttr_t AudioWrSdBinarySem_attributes = {
-  .name = "AudioWrSdBinarySem"
-};
+const osSemaphoreAttr_t AudioWrSdBinarySem_attributes = {.name = "AudioWrSdBinarySem"};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -300,22 +280,20 @@ void CallLedCallback(void *argument);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /**
-  * @brief  FreeRTOS initialization
-  * @param  None
-  * @retval None
-  */
-void MX_FREERTOS_Init(void) {
+ * @brief  FreeRTOS initialization
+ * @param  None
+ * @retval None
+ */
+void MX_FREERTOS_Init(void)
+{
   /* USER CODE BEGIN Init */
   heap_pool_init(&heap_pool_audio_eth_to_vocoder, heap_pool_audio_eth_to_vocoder_memory, heap_pool_audio_eth_to_vocoder_bitmap,
                  HEAP_POOL_AUDIO_ETH_TO_VOCODER_BLOCK_SIZE, HEAP_POOL_AUDIO_ETH_TO_VOCODER_BLOCK_COUNT);
   heap_pool_init(&heap_pool_audio_wr_sd, heap_pool_audio_wr_sd_memory, heap_pool_audio_wr_sd_bitmap, HEAP_POOL_AUDIO_WR_SD_BLOCK_SIZE,
                  HEAP_POOL_AUDIO_WR_SD_BLOCK_COUNT);
 
-  //  hp_off();
-  //  sp_off();
   mic_ar_set(AR_MED);
   mic_gain_set(GAIN_50DB);
-  vocoder_enable(); // vocoder disable
   BCLKR_Set_Low();
   HAL_SAI_Transmit_DMA(&hsai_BlockA1, (uint8_t *)sai_a_buf, AUDIO_BUF_SIZE * 2);
   HAL_SAI_Receive_DMA(&hsai_BlockB1, (uint8_t *)sai_b_buf, AUDIO_BUF_SIZE * 2);
@@ -343,28 +321,28 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the queue(s) */
   /* creation of W5500Queue */
-  W5500QueueHandle = osMessageQueueNew (16, sizeof(w5500_msg_t), &W5500Queue_attributes);
+  W5500QueueHandle = osMessageQueueNew(16, sizeof(w5500_msg_t), &W5500Queue_attributes);
 
   /* creation of RxVocoderToAudioMixQueue */
-  RxVocoderToAudioMixQueueHandle = osMessageQueueNew (16, sizeof(audio_msg_t), &RxVocoderToAudioMixQueue_attributes);
+  RxVocoderToAudioMixQueueHandle = osMessageQueueNew(16, sizeof(audio_msg_t), &RxVocoderToAudioMixQueue_attributes);
 
   /* creation of TxVocoderToAudioMixQueue */
-  TxVocoderToAudioMixQueueHandle = osMessageQueueNew (16, sizeof(audio_msg_t), &TxVocoderToAudioMixQueue_attributes);
+  TxVocoderToAudioMixQueueHandle = osMessageQueueNew(16, sizeof(audio_msg_t), &TxVocoderToAudioMixQueue_attributes);
 
   /* creation of EthToAudioMixQueue */
-  EthToAudioMixQueueHandle = osMessageQueueNew (16, sizeof(audio_msg_t), &EthToAudioMixQueue_attributes);
+  EthToAudioMixQueueHandle = osMessageQueueNew(16, sizeof(audio_msg_t), &EthToAudioMixQueue_attributes);
 
   /* creation of AudioVocoderToProcessAudioQueue */
-  AudioVocoderToProcessAudioQueueHandle = osMessageQueueNew (16, sizeof(audio_msg_t), &AudioVocoderToProcessAudioQueue_attributes);
+  AudioVocoderToProcessAudioQueueHandle = osMessageQueueNew(16, sizeof(audio_msg_t), &AudioVocoderToProcessAudioQueue_attributes);
 
   /* creation of AudioWriteSdQueue */
-  AudioWriteSdQueueHandle = osMessageQueueNew (16, sizeof(sd_msg_t), &AudioWriteSdQueue_attributes);
+  AudioWriteSdQueueHandle = osMessageQueueNew(16, sizeof(sd_msg_t), &AudioWriteSdQueue_attributes);
 
   /* creation of AudioEthToVocoderQueue */
-  AudioEthToVocoderQueueHandle = osMessageQueueNew (16, sizeof(audio_msg_t), &AudioEthToVocoderQueue_attributes);
+  AudioEthToVocoderQueueHandle = osMessageQueueNew(16, sizeof(audio_msg_t), &AudioEthToVocoderQueue_attributes);
 
   /* creation of IOQueue */
-  IOQueueHandle = osMessageQueueNew (16, sizeof(io_msg_t), &IOQueue_attributes);
+  IOQueueHandle = osMessageQueueNew(16, sizeof(io_msg_t), &IOQueue_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -396,7 +374,6 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */
   /* USER CODE END RTOS_EVENTS */
-
 }
 
 /* USER CODE BEGIN Header_Default_Task */
@@ -558,12 +535,9 @@ void SdCard_Task(void *argument)
           }
           if (fs_check_fat32() == FR_OK)
           {
-            printf("fs_check_fat32 OK\r\n");
             sd_card_led_on();
             sd_card_init_flag = 1;
-            printf("sd_card_init_flag = %d\r\n", sd_card_init_flag);
             wav_file_count_set(fatfs32_count_wav_files());
-            printf("count_wav_files: %d\r\n", (int)wav_file_count_get());
             if (!rtc_time_set_flag)
             {
               FRESULT res = read_datetime_from_index_dat(&time, &date);
@@ -581,7 +555,6 @@ void SdCard_Task(void *argument)
           }
           else
           {
-            printf("fs_check_fat32 ERROR\r\n");
             f_mount(NULL, "", 0);
             HAL_SD_DeInit(&hsd1);
             MX_FATFS_DeInit();
@@ -596,7 +569,6 @@ void SdCard_Task(void *argument)
           MX_FATFS_DeInit();
           sd_card_init_flag = 0;
           sd_card_led_off();
-          printf("sd_card_init_flag = %d\r\n", sd_card_init_flag);
         }
         break;
       case SD_CREATE_WAV_FILE: break;
@@ -606,7 +578,6 @@ void SdCard_Task(void *argument)
           wav_file_create();
           if (wav_file_write_data("Music.wav", sd_msg.ptr, SD_WRITE_BUF_SIZE / 2) != FR_OK)
           {
-            printf("wav_file_write_data error\r\n");
           }
           else
           {
@@ -615,19 +586,15 @@ void SdCard_Task(void *argument)
             {
               if (wav_update_header() != FR_OK)
               {
-                printf("wav_update_header error: %d\r\n", (int)file_index_get());
               }
               else
               {
-                printf("wav_update_header ok: %d\r\n", (int)file_index_get());
               }
               if (wav_file_close() != FR_OK)
               {
-                printf("wav_file_close error %d\r\n", (int)file_index_get());
               }
               else
               {
-                printf("wav_file_close ok %d\r\n", (int)file_index_get());
               }
               record.cnt = 0;
             }
@@ -639,19 +606,15 @@ void SdCard_Task(void *argument)
         {
           if (wav_update_header() != FR_OK)
           {
-            printf("wav_update_header error: %d\r\n", (int)file_index_get());
           }
           else
           {
-            printf("wav_update_header ok: %d\r\n", (int)file_index_get());
           }
           if (wav_file_close() != FR_OK)
           {
-            printf("wav_file_close error %d\r\n", (int)file_index_get());
           }
           else
           {
-            printf("wav_file_close ok %d\r\n", (int)file_index_get());
           }
           sd_state.active_buf = 0;
           sd_state.write_offset = 0;
@@ -840,10 +803,10 @@ void ProcessIO_Task(void *argument)
         }
         else
         {
-          vocoder_enable(); // vocoder disable
-          hp_on();          // handset speaker amplifier
-          mic_on();         // off the microphone amplifier
-          flag_call_clear();
+          vocoder_enable();  // Vocoder disable
+          hp_on();           // Handset speaker amplifier
+          mic_on();          // off the microphone amplifier
+          flag_call_clear(); // Flag call clear
           timer_call_stop(); // Timer stop
           call_led_off();    // Led off
         }

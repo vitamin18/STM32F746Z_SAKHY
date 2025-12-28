@@ -58,10 +58,10 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, PCM_PUI_Pin|W5500_RESET_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOF, SP_Pin|HP_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOF, SP_Pin|HP_Pin|MIC_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOF, MIC_A_R_Pin|GAIN_Pin|MIC_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOF, MIC_A_R_Pin|GAIN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(W5500_NSS_GPIO_Port, W5500_NSS_Pin, GPIO_PIN_RESET);
@@ -86,14 +86,19 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : SP_Pin HP_Pin MIC_A_R_Pin GAIN_Pin
-                           MIC_Pin */
-  GPIO_InitStruct.Pin = SP_Pin|HP_Pin|MIC_A_R_Pin|GAIN_Pin
-                          |MIC_Pin;
+  /*Configure GPIO pins : SP_Pin MIC_A_R_Pin GAIN_Pin MIC_Pin */
+  GPIO_InitStruct.Pin = SP_Pin|MIC_A_R_Pin|GAIN_Pin|MIC_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : HP_Pin */
+  GPIO_InitStruct.Pin = HP_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(HP_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PTT_Pin */
   GPIO_InitStruct.Pin = PTT_Pin;
