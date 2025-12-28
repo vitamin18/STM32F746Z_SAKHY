@@ -1,0 +1,6 @@
+../Ethernet/src/w5500_port.c:35:13:w5500_critcical_enter	1
+../Ethernet/src/w5500_port.c:46:13:w5500_critcical_exit	1
+../Ethernet/src/w5500_port.c:56:6:w5500_spi_cs_low	1
+../Ethernet/src/w5500_port.c:66:6:w5500_spi_cs_hi	1
+../Ethernet/src/w5500_port.c:77:6:w5500_spi_read	1
+../Ethernet/src/w5500_port.c:88:6:w5500_spi_write	1

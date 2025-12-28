@@ -1,0 +1,9 @@
+../FIFO_Queue/Src/fifo_queue.c:38:6:fifo_queue_init	24	static
+../FIFO_Queue/Src/fifo_queue.c:57:6:fifo_queue_clear	16	static
+../FIFO_Queue/Src/fifo_queue.c:77:10:fifo_queue_write	24	static
+../FIFO_Queue/Src/fifo_queue.c:97:10:fifo_queue_read	16	static
+../FIFO_Queue/Src/fifo_queue.c:114:6:fifo_queue_free	16	static
+../FIFO_Queue/Src/fifo_queue.c:129:5:fifo_queue_is_full	16	static
+../FIFO_Queue/Src/fifo_queue.c:140:5:fifo_queue_is_empty	16	static
+../FIFO_Queue/Src/fifo_queue.c:151:10:fifo_queue_count	16	static
+../FIFO_Queue/Src/fifo_queue.c:162:10:fifo_queue_free_space	16	static

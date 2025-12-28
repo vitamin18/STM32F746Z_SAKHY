@@ -1,0 +1,15 @@
+../Core/Src/fatfs_app.c:71:9:fs_check_fat32	32	static
+../Core/Src/fatfs_app.c:105:9:wav_write_header	72	static
+../Core/Src/fatfs_app.c:131:9:wav_update_header	64	static
+../Core/Src/fatfs_app.c:178:9:wav_file_create	56	static
+../Core/Src/fatfs_app.c:208:9:wav_file_write_data	32	static
+../Core/Src/fatfs_app.c:224:9:wav_file_close	8	static
+../Core/Src/fatfs_app.c:250:9:SD_FatFs_Test	4224	static
+../Core/Src/fatfs_app.c:295:13:create_wav_filename	16	static
+../Core/Src/fatfs_app.c:310:9:get_next_file_index	4168	static
+../Core/Src/fatfs_app.c:360:9:read_datetime_from_index_dat	64	static
+../Core/Src/fatfs_app.c:426:10:file_index_get	4	static
+../Core/Src/fatfs_app.c:431:6:file_index_set	16	static
+../Core/Src/fatfs_app.c:436:10:fatfs32_count_wav_files	80	static
+../Core/Src/fatfs_app.c:464:6:wav_file_count_set	16	static
+../Core/Src/fatfs_app.c:469:10:wav_file_count_get	4	static

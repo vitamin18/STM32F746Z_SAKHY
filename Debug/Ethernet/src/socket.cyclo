@@ -1,0 +1,8 @@
+../Ethernet/src/socket.c:68:8:socket	18
+../Ethernet/src/socket.c:139:8:close	4
+../Ethernet/src/socket.c:161:8:listen	6
+../Ethernet/src/socket.c:181:8:disconnect	7
+../Ethernet/src/socket.c:210:9:sendto	19
+../Ethernet/src/socket.c:302:9:send	16
+../Ethernet/src/socket.c:365:9:recv	14
+../Ethernet/src/socket.c:426:9:recvfrom	25

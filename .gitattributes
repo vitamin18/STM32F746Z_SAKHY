@@ -1,0 +1,32 @@
+# Общие правила
+* text=auto
+
+# Исходники
+*.c   text eol=lf
+*.h   text eol=lf
+*.s   text eol=lf
+*.ld  text eol=lf
+*.mk  text eol=lf
+
+# Файлы проекта IDE (например, STM32CubeIDE)
+*.launch text eol=crlf
+*.project text eol=crlf
+*.cproject text eol=crlf
+
+# Конфигурационные файлы
+*.xml  text eol=lf
+*.yml  text eol=lf
+*.json text eol=lf
+
+# Скрипты сборки
+*.sh   text eol=lf
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
+# Бинарные файлы (не трогаем)
+*.bin   binary
+*.elf   binary
+*.hex   binary
+*.o     binary
+*.a     binary
+*.lib   binary
